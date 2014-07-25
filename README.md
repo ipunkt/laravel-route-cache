@@ -30,7 +30,29 @@ If the `infoheader` config setting is not `false` the library adds a Header to t
 
 The class `Ipunkt\LaravelRouteCache\RouteCache` works out of the box without the filter. You can use it in your controllers
 
+  // get RouteCache-Instance
   $routecache = \App::make('routecache');
+  $routecache->setEntityFromRequest($request);
+  // or
+  $routecache->setEntityFromUrl($url);
+  
+  // to remove the cache
+  $routecache->removeCache()
+  
+  // to check if the client has a valid (same ETag) Cache
+  $routecache->checkClientHasValidCache()
+
+  // to save a Response to the Cache
+  $routecache->setCacheFromResponse(Response $response)
+  
+  // to save string-content to the Cache
+  $routecache->setCacheFromContent($content)
+  
+  // to get a saved Response from the Cache
+  $routecache->getResponseFromCache()
+  
+  // TODO to get a saved string from the Cache
+  $routecache->getContentFromCache()
 
 ## Open TODOs
 Feel free to fork and push changes
@@ -38,3 +60,4 @@ Feel free to fork and push changes
 * add TestCases
 * cache content-type of the content and respond with that.
 * Routines to handle POST, PUT, UPDATE and DELETE Requests
+* get plain content back from cache (you can get it in, why not out)
