@@ -1,6 +1,7 @@
 {
     "name": "ipunkt/laravel-route-cache",
-    "description": "",
+    "description": "Simple Cache for Laravel Routes sending 304 and cached static content",
+    "license": "MIT",
     "authors": [
         {
             "name": "Bastian Rang (ipunkt Business Solutions)",
