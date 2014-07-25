@@ -51,7 +51,7 @@ The class `Ipunkt\LaravelRouteCache\RouteCache` works out of the box without the
 	// to get a saved Response from the Cache
 	$routecache->getResponseFromCache()
 	
-	// TODO to get a saved string from the Cache
+	// to get a saved string from the Cache
 	$routecache->getContentFromCache()
 	
 	// you can get the ETag for the entity (but you don't need it)
@@ -66,4 +66,3 @@ Feel free to fork and push changes
 * add TestCases
 * cache content-type of the content and respond with that.
 * Routines to handle POST, PUT, UPDATE and DELETE Requests
-* get plain content back from cache (you can get it in, why not out)
