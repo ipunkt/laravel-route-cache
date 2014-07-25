@@ -115,6 +115,19 @@ class RouteCache
 
         return $response;
     }
+    
+    
+    /**
+     * @return string|null
+     */
+    public function getContentFromCache()
+    {
+        if ($this->option('cache-static-content') === false) {
+            return null;
+        }
+
+        return $this->cache->get('content-' . $this->entity);
+    }
 
     /**
      * Check if the current Request has the given ETag
@@ -188,7 +201,7 @@ class RouteCache
         /**
          * 0 as minutes stores forever
          */
-        $this->cache->put('etag-' . $this->entity, $value, 0);
+        $this->cache->put('etag-' . $this->entity, $value, $this->option('timeout'));
     }
 
 
@@ -210,7 +223,6 @@ class RouteCache
     public function setETagFromContent($content)
     {
         $etag = md5($this->entity . $content);
-        \Log::debug('Created new ETag for ' . $this->entity . ': ' . $etag);
         $this->setETag($etag);
         return $etag;
     }
@@ -234,7 +246,7 @@ class RouteCache
             /**
              * 0 as minutes stores forever
              */
-            $this->cache->put('content-' . $this->entity, $content, 0);
+            $this->cache->put('content-' . $this->entity, $content, $this->option('timeout'));
         }
         $this->setETagFromContent($content);
     }
