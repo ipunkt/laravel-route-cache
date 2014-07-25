@@ -7,7 +7,7 @@ This package simplifies caching of static pages in your laravel project. It send
 Add to your composer.json following lines
 
 	"require": {
-		"ipunkt/laravel-route-cache": "dev-master"
+		"ipunkt/laravel-route-cache": "~1.0.0"
 	}
 
 Run `php artisan config:publish ipunkt/laravel-route-cache`
