@@ -53,6 +53,12 @@ The class `Ipunkt\LaravelRouteCache\RouteCache` works out of the box without the
 	
 	// TODO to get a saved string from the Cache
 	$routecache->getContentFromCache()
+	
+	// you can get the ETag for the entity (but you don't need it)
+	$routecache->getETag()
+	
+	// you can even set a custom ETag if you like
+	$routecache->getETag($value)
 
 ## Open TODOs
 Feel free to fork and push changes
