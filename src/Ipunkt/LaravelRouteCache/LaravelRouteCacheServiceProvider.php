@@ -39,6 +39,13 @@ class LaravelRouteCacheServiceProvider extends ServiceProvider
         \Event::listen('entity.modified', 'Ipunkt\LaravelRouteCache\EntityModifiedHandler');
     }
 
+    /**
+     * register package namespace
+     */
+    public function boot() {
+        $this->package('ipunkt/laravel-route-cache');
+    }
+
     public function provides()
     {
         return [
