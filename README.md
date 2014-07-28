@@ -1,4 +1,6 @@
 # Route Cache for Laravel 4.x
+[![Latest Stable Version](https://poser.pugx.org/ipunkt/laravel-route-cache/v/stable.svg)](https://packagist.org/packages/ipunkt/laravel-route-cache) [![Latest Unstable Version](https://poser.pugx.org/ipunkt/laravel-route-cache/v/unstable.svg)](https://packagist.org/packages/ipunkt/laravel-route-cache) [![License](https://poser.pugx.org/ipunkt/laravel-route-cache/license.svg)](https://packagist.org/packages/ipunkt/laravel-route-cache) [![Total Downloads](https://poser.pugx.org/ipunkt/laravel-route-cache/downloads.svg)](https://packagist.org/packages/ipunkt/laravel-route-cache)
+
 
 This package simplifies caching of static pages in your laravel project. It sends 304 status headers and (if available) static html without running the controller. The configuration ist easy and straight forward using a single route-filter.
 
