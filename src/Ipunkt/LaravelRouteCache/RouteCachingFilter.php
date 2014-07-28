@@ -55,10 +55,9 @@ class RouteCachingFilter
         }
 
         if ($this->routecache->checkClientHasValidCache()) {
-            /**
-             * TODO Check if it is better to create a new 304-response
-             */
-            \App::abort(304);
+            $response = new Response();
+            $response->setNotModified();
+            return $response;
         }
 
         $response = $this->routecache->getResponseFromCache();
