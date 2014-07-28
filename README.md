@@ -22,7 +22,7 @@ Edit `config.php` in `app/config/packages/ipunkt/laravel-route-cache` to your ne
 
 ## How to use as Laravel Route-Filter
 
-Add `'before' => 'cache.before'` to every route you like to cache. **The route have to be canonical!**, because the filter caches just by extracting the `url()` from the Request. (maybe i change that to `fullUrl()`)
+Add `'before' => 'cache.before'` to every route you like to cache. **The route has to be canonical!**, because the filter caches just by extracting the `url()` from the Request. (maybe i change that to `fullUrl()`)
 
 To outdate a cache, just fire the Event `entity.modified` and attach the Request or URL of the modified ressource. You can force that on your browser by attaching the GET-Parameter set in your config as `cachebuster` (default is "renew-cache") to the URL.
 
